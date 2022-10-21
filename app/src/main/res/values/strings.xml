@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Estados</string>
+    <string name="tv_correo">Correo</string>
+    <string name="tv_clave">Contraseña</string>
+    <string name="title_activity_principal">Principal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_estados">Estados</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="msg_estado">Nombre de estado</string>
+    <string name="msg_capital">Capital</string>
+    <string name="msg_poblacion">Cantidad de población</string>
+    <string name="msg_costas">Cuanta con costas?(si/no)</string>
+    <string name="bt_add_estado">Agregar Estado</string>
+    <string name="bt_update_estado">Actualizar Estado</string>
+    <string name="msg_estado_added">Estado Agregado</string>
+    <string name="msg_estado_updated">Estado Actualizado</string>
+    <string name="msg_data">Faltan Datos</string>
+    <string name="bt_delete_estado">Eliminar Estado</string>
+    <string name="msg_estado_deleted">Estado Eliminado</string>
+    <string name="msg_estado_pregunta">Seguro de querer borrar el estado?</string>
+    <string name="msg_si">Si</string>
+    <string name="msg_no">No</string>
+    <string name="msg_enviar_correo">Enviar correo electrónico</string>
+    <string name="msg_phone_call">Realizar llamada telefónica</string>
+    <string name="msg_whatsapp_send">Enviar mensaje WhatsApp</string>
+    <string name="msg_web_view">Abrir sitio Web</string>
+    <string name="msg_map_view">Ver lugar en mapa</string>
+    <string name="tv_latitud_lb">Latitud</string>
+    <string name="tv_longitud_lb">Longitud</string>
+    <string name="tv_altura_lb">Altura</string>
+    <string name="msg_saludos">Saludos amigos</string>
+    <string name="msg_mensaje_correo">Le escribo este correo para</string>
+    <string name="error">Error</string>
+
+    <string name="menu_home">Home</string>
+</resources>
