@@ -9,7 +9,14 @@
         android:id="@+id/nav_estados"
         android:name="com.estados.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_estados" >
+        <action
+            android:id="@+id/action_nav_estados_to_addEstadosFragment"
+            app:destination="@id/addEstadosFragment" />
+        <action
+            android:id="@+id/action_nav_estados_to_updateEstadosFragment"
+            app:destination="@id/updateEstadosFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +29,20 @@
         android:name="com.estados.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/addEstadosFragment"
+        android:name="com.estados.ui.estados.AddEstadosFragment"
+        android:label="AddEstadosFragment" >
+        <action
+            android:id="@+id/action_addEstadosFragment_to_nav_estados"
+            app:destination="@id/nav_estados" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateEstadosFragment"
+        android:name="com.estados.ui.estados.UpdateEstadosFragment"
+        android:label="UpdateEstadosFragment" >
+        <action
+            android:id="@+id/action_updateEstadosFragment_to_nav_estados"
+            app:destination="@id/nav_estados" />
+    </fragment>
 </navigation>

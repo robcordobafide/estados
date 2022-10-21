@@ -3,46 +3,47 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.estados.databinding.LugarFilaBinding
-import com.estados.model.Lugar
-import com.estados.ui.estados.LugarFragmentDirections
+import com.estados.databinding.EstadosFilaBinding
+import com.estados.model.Estados
+import com.estados.ui.estados.EstadosFragmentDirections
 
-class EstadosAdapter : RecyclerView.Adapter<EstadosAdapter.LugarViewHolder>() {
+class EstadosAdapter : RecyclerView.Adapter<EstadosAdapter.EstadosViewHolder>() {
     //La lista de lugares a "dibujar"
-    private var listaLugares = emptyList<Lugar>()
+    private var listaEstados = emptyList<Estados>()
     //Contenedor de vistas "cajitas" en memoria...
-    inner class LugarViewHolder(private val itemBinding: LugarFilaBinding)
+    inner class EstadosViewHolder(private val itemBinding: EstadosFilaBinding)
         : RecyclerView.ViewHolder(itemBinding.root) {
-        fun dibuja(lugar: Lugar) {
-            itemBinding.tvNombre.text = lugar.nombre
-            itemBinding.tvTelefono.text = lugar.telefono
-            itemBinding.tvCorreo.text = lugar.correo
+        fun dibuja(estados: Estados) {
+            itemBinding.tvNombre.text = estados.estado
+            itemBinding.tvCapital.text = estados.capital
+            itemBinding.tvPoblacion.text = estados.poblacion
+            itemBinding.tvCostas.text = estados.costas
             itemBinding.vistaFila.setOnClickListener {
-                val accion = LugarFragmentDirections
-                    .actionNavLugarToUpdateLugarFragment(lugar)
+                val accion = EstadosFragmentDirections
+                    .actionNavLugarToUpdateLugarFragment(estados)
                 itemView.findNavController().navigate(accion)
             }
 
         }
     }
     //Crea un "cajita" una vista del tipo lugarFila...
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LugarViewHolder {
-        val itemBinding = LugarFilaBinding
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EstadosViewHolder {
+        val itemBinding = EstadosFilaBinding
             .inflate(LayoutInflater.from(parent.context)
                 ,parent
                 ,false)
-        return LugarViewHolder(itemBinding)
+        return EstadosViewHolder(itemBinding)
     }
     //Con una "cajita" creada... se pasa a dibujar los datos del lugar x
-    override fun onBindViewHolder(holder: LugarViewHolder, position: Int) {
-        val lugarActual = listaLugares[position]
-        holder.dibuja(lugarActual)
+    override fun onBindViewHolder(holder: EstadosViewHolder, position: Int) {
+        val lugarEstado = listaEstados[position]
+        holder.dibuja(lugarEstado)
     }
     override fun getItemCount(): Int {
-        return listaLugares.size
+        return listaEstados.size
     }
-    fun setLugares(lugares : List<Lugar>) {
-        listaLugares = lugares
+    fun setEstados(estados : List<Estados>) {
+        listaEstados = estados
         notifyDataSetChanged()  //Se notifica que el conjunto de datos cambio y se redibuja toda la lista
     }
 }

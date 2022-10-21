@@ -33,55 +33,20 @@ class AddEstadosFragment : Fragment() {
 
         binding.btAddEstados.setOnClickListener { addEstados() }
 
-        activaGPS()
 
         return binding.root
     }
 
-    private fun activaGPS() {
 
-        if(requireActivity()
-                .checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION) !=
-            PackageManager.PERMISSION_GRANTED &&
-            requireActivity()
-                .checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) !=
-            PackageManager.PERMISSION_GRANTED) {
-            requireActivity().requestPermissions(
-                arrayOf(
-                    android.Manifest.permission.ACCESS_COARSE_LOCATION
-                ,Manifest.permission.ACCESS_FINE_LOCATION),
-                105)
-        }else{
-
-            val  fusedLocationCLient:FusedLocationProviderClient =
-                LocationServices.getFusedLocationProviderClient(requireContext())
-            fusedLocationCLient.lastLocation.addOnSuccessListener {
-                location: Location? ->
-                if(location != null) {
-                    binding.tvLatitud.text = "${location.latitude}"
-                    binding.tvLongitud.text = "${location.longitude}"
-                    binding.tvAltura.text = "${location.altitude}"
-                }else {
-
-                    binding.tvLatitud.text = "0.0"
-                    binding.tvLongitud.text = "0.0"
-                    binding.tvAltura.text = "0.0"
-
-                }
-            }
-
-        }
-
-    }
 
     private fun addEstados() {
-        val nombre = binding.etNombre.text.toString()
-        val correo  = binding.etCorreoEstados.text.toString()
-        val telefono = binding.etTelefono.text.toString()
-        val web  = binding.etWeb.text.toString()
+        val estado = binding.etEstado.text.toString()
+        val capital  = binding.etCapitalEstado.text.toString()
+        val poblacion = binding.etPoblacionEstado.text.toString()
+        val costas  = binding.etCostasEstado.text.toString()
 
-        if (nombre.isNotEmpty()){
-            val estados = Estados(0,nombre,correo,web,telefono,latitud,longitud,altura,"","")
+        if (estado.isNotEmpty()){
+            val estados = Estados(0,estado,capital,poblacion,costas)
             estadosViewModel.saveEstados(estados)
             Toast.makeText(requireContext(),getString(R.string.msg_estado_added),
                 Toast.LENGTH_SHORT).show()

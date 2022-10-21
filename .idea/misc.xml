@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/mario/AndroidStudioProjects/Estados/app/src/main/res/drawable-v24/ic_add_estados.xml" value="0.271" />
+        <entry key="..\:/Users/mario/AndroidStudioProjects/Estados/app/src/main/res/layout/content_principal.xml" value="0.3052586575459598" />
+        <entry key="..\:/Users/mario/AndroidStudioProjects/Estados/app/src/main/res/layout/estados_fila.xml" value="0.3052586575459598" />
+        <entry key="..\:/Users/mario/AndroidStudioProjects/Estados/app/src/main/res/layout/fragment_add_estados.xml" value="0.3052586575459598" />
+        <entry key="..\:/Users/mario/AndroidStudioProjects/Estados/app/src/main/res/layout/fragment_estados.xml" value="0.3052586575459598" />
+        <entry key="..\:/Users/mario/AndroidStudioProjects/Estados/app/src/main/res/layout/fragment_home.xml" value="0.3052586575459598" />
+        <entry key="..\:/Users/mario/AndroidStudioProjects/Estados/app/src/main/res/layout/fragment_update_estados.xml" value="0.3052586575459598" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

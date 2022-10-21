@@ -1,23 +1,23 @@
-package com.lugares_v.viewmodel
+package com.estados.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.lugares_v.data.EstadosDatabase
-import com.lugares_v.model.Estados
-import com.lugares_v.repository.EstadosRepository
+import com.estados.data.EstadosDatabase
+import com.estados.model.Estados
+import com.estados.repository.EstadosRepository
 import kotlinx.coroutines.launch
 class EstadosViewModel(application: Application) : AndroidViewModel(application) {
-    val getLugares : LiveData<List<Estados>>
+    val getEstados : LiveData<List<Estados>>
     private val repository: EstadosRepository
     init {
-        val lugarDao = EstadosDatabase.getDatabase(application).lugarDao()
-        repository = EstadosRepository(lugarDao)
-        getLugares = repository.getLugares
+        val estadosDao = EstadosDatabase.getDatabase(application).estadosDao()
+        repository = EstadosRepository(estadosDao)
+        getEstados = repository.getEstados
     }
-    fun saveLugar(estados: Estados) {
-        viewModelScope.launch { repository.saveLugar(estados) }
+    fun saveEstados(estados: Estados) {
+        viewModelScope.launch { repository.saveEstados(estados) }
     }
-    fun deleteLugar(estados: Estados) {
-        viewModelScope.launch { repository.deleteLugar(estados)}
+    fun deleteEstados(estados: Estados) {
+        viewModelScope.launch { repository.deleteEstados(estados)}
     }
 }

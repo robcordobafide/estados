@@ -6,7 +6,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 @Parcelize
-@Entity(tableName="estado")
+@Entity(tableName="estados")
 data class Estados(
     @PrimaryKey(autoGenerate = true)
     val id: Int,

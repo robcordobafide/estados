@@ -16,6 +16,6 @@ interface EstadosDao {
     suspend fun updateEstados(estados: Estados)
     @Delete
     suspend fun deleteEstados(estados: Estados)
-    @Query("SELECT * FROM LUGAR")
+    @Query("SELECT * FROM ESTADOS")
     fun getEstados() : LiveData<List<Estados>>
 }

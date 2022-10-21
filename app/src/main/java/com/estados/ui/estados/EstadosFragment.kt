@@ -27,7 +27,7 @@ class EstadosFragment : Fragment() {
          estadosViewModel =  ViewModelProvider(this).get(EstadosViewModel::class.java)
         _binding = FragmentEstadosBinding.inflate(inflater, container, false)
 
-        binding.addLugarFabBt.setOnClickListener {
+        binding.addEstadosFabBt.setOnClickListener {
             findNavController().navigate(R.id.action_nav_estados_to_addEstadosFragment)
         }
 
