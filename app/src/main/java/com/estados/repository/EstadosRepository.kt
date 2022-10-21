@@ -1,18 +1,18 @@
-package com.lugares_v.repository
+package com.estados.repository
 
 import androidx.lifecycle.LiveData
-import com.lugares_v.data.EstadosDao
-import com.lugares_v.model.Estados
+import com.estados.data.EstadosDao
+import com.estados.model.Estados
 class EstadosRepository(private val estadosDao: EstadosDao) {
     suspend fun saveLugar(estados: Estados) {
         if (estados.id==0) {  //Es un lugar nuevo
-            estadosDao.addLugar(estados)
+            estadosDao.addEstados(estados)
         } else {  //El lugar existe... entonces se actualiza...
-            estadosDao.updateLugar(estados)
+            estadosDao.updateEstados(estados)
         }
     }
-    suspend fun deleteLugar(estados: Estados) {
-        estadosDao.deleteLugar(estados)
+    suspend fun deleteEstados(estados: Estados) {
+        estadosDao.deleteEstados(estados)
     }
-    val getLugares : LiveData<List<Estados>> = estadosDao.getLugares()
+    val getEstados : LiveData<List<Estados>> = estadosDao.getEstados()
 }

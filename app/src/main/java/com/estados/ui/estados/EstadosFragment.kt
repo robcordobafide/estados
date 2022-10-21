@@ -1,4 +1,4 @@
-package com.lugares_v.ui.lugar
+package com.estados.ui.estados
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,14 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.lugares_v.R
-import com.lugares_v.adapter.EstadosAdapter
-import com.lugares_v.databinding.FragmentLugarBinding
-import com.lugares_v.viewmodel.EstadosViewModel
+import com.estados.R
+import com.estados.adapter.EstadosAdapter
+import com.estados.databinding.FragmentEstadosBinding
+import com.estados.viewmodel.EstadosViewModel
 
 class EstadosFragment : Fragment() {
 
-    private var _binding: FragmentLugarBinding? = null
+    private var _binding: FragmentEstadosBinding? = null
     private val binding get() = _binding!!
     private lateinit var estadosViewModel: EstadosViewModel
 
@@ -25,10 +25,10 @@ class EstadosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
          estadosViewModel =  ViewModelProvider(this).get(EstadosViewModel::class.java)
-        _binding = FragmentLugarBinding.inflate(inflater, container, false)
+        _binding = FragmentEstadosBinding.inflate(inflater, container, false)
 
         binding.addLugarFabBt.setOnClickListener {
-            findNavController().navigate(R.id.action_nav_lugar_to_addLugarFragment)
+            findNavController().navigate(R.id.action_nav_estados_to_addEstadosFragment)
         }
 
         //activar el recyceler view
@@ -37,8 +37,8 @@ class EstadosFragment : Fragment() {
         reciclador.adapter= estadosAdapter
         reciclador.layoutManager = LinearLayoutManager(requireContext())
 
-        estadosViewModel.getLugares.observe(viewLifecycleOwner) {
-            lugares -> estadosAdapter.setLugares(lugares)
+        estadosViewModel.getEstados.observe(viewLifecycleOwner) {
+                estados -> estadosAdapter.setEstados(estados)
         }
 
         return binding.root
