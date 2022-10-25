@@ -1,4 +1,4 @@
-package com.lugares_v.ui.gallery
+package com.estados.ui.gallery
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.lugares_v.databinding.FragmentGalleryBinding
-import com.lugares_v.viewmodel.GalleryViewModel
+import com.estados.databinding.FragmentGalleryBinding
+import com.estados.viewmodel.GalleryViewModel
 
 class GalleryFragment : Fragment() {
 

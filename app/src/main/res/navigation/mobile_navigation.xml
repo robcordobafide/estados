@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_estados"
-        android:name="com.estados.ui.home.HomeFragment"
+        android:name="com.estados.ui.estados.EstadosFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_estados" >
         <action
@@ -44,5 +44,9 @@
         <action
             android:id="@+id/action_updateEstadosFragment_to_nav_estados"
             app:destination="@id/nav_estados" />
+        <argument
+            android:name="estado"
+            app:argType="com.estados.model.Estados" />
     </fragment>
+
 </navigation>

@@ -38,10 +38,12 @@ class UpdateEstadosFragment : Fragment() {
         estadosViewModel =  ViewModelProvider(this).get(EstadosViewModel::class.java)
         _binding = FragmentUpdateEstadosBinding.inflate(inflater, container, false)
 
-        binding.etEstadoUp.setText(args.estados.nombre)
-        binding.etCapitalUp.setText(args.estados.correo)
-        binding.etPoblacionUp.setText(args.estados.telefono)
-        binding.etCostasUp.setText(args.estados.web)
+        binding.etEstadoUp.setText(args.estado.estado)
+        binding.etCapitalUp.setText(args.estado.capital)
+        binding.etPoblacionUp.setText(args.estado.poblacion)
+        binding.etCostasUp.setText(args.estado.costas)
+
+
 
         binding.btUpdateEstados.setOnClickListener { updateEstados() }
         binding.btDeleteEstados.setOnClickListener { deleteEstados() }
@@ -54,9 +56,9 @@ class UpdateEstadosFragment : Fragment() {
 
         val alerta = AlertDialog.Builder(requireContext())
         alerta.setTitle(R.string.bt_delete_estado)
-        alerta.setMessage(getString(R.string.msg_estado_pregunta)+"${args.estados.nombre}?")
+        alerta.setMessage(getString(R.string.msg_estado_pregunta)+"${args.estado.estado}?")
         alerta.setPositiveButton(getString(R.string.msg_si)){_,_ ->
-            estadosViewModel.deleteEstados(args.estados)
+            estadosViewModel.deleteEstados(args.estado)
             Toast.makeText(requireContext(),getString(R.string.msg_estado_deleted),Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_updateEstadosFragment_to_nav_estados)
         }
@@ -65,13 +67,13 @@ class UpdateEstadosFragment : Fragment() {
     }
 
     private fun updateEstados() {
-        val nombre = binding.etEstadoUp.text.toString()
-        val correo  = binding.etCapitalUp.text.toString()
-        val telefono = binding.etPoblacionUp.text.toString()
-        val web  = binding.etCostasUp.text.toString()
+        val estados = binding.etEstadoUp.text.toString()
+        val capital  = binding.etCapitalUp.text.toString()
+        val poblacion = binding.etPoblacionUp.text.toString()
+        val costas  = binding.etCostasUp.text.toString()
 
-        if (nombre.isNotEmpty()){
-            val estados = Estados(args.estados.id,nombre,correo,web,telefono)
+        if (estados.isNotEmpty()){
+            val estados = Estados(args.estado.id,estados,capital,poblacion,costas)
             estadosViewModel.saveEstados(estados)
             Toast.makeText(requireContext(),getString(R.string.msg_estado_updated),
                 Toast.LENGTH_SHORT).show()

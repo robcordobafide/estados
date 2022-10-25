@@ -1,4 +1,4 @@
-package com.lugares_v.viewmodel
+package com.estados.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

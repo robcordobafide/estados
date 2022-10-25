@@ -20,7 +20,7 @@ class EstadosAdapter : RecyclerView.Adapter<EstadosAdapter.EstadosViewHolder>() 
             itemBinding.tvCostas.text = estados.costas
             itemBinding.vistaFila.setOnClickListener {
                 val accion = EstadosFragmentDirections
-                    .actionNavLugarToUpdateLugarFragment(estados)
+                    .actionNavEstadosToUpdateEstadosFragment(estados)
                 itemView.findNavController().navigate(accion)
             }
 
